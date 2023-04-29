@@ -8,7 +8,7 @@
 #include "saved_struct.h"
 #include <power/power_service/power.h>
 
-const char* funnyText[] = 
+const char* funnyText[] =
 {"Stop poking my brain",
  "You're a terrible owner",
  "I'll remember this!",
@@ -38,10 +38,9 @@ static void draw_callback(Canvas* canvas, void* ctx) {
     }
 
     //strings
-    canvas_set_font(canvas, FontBatteryPercent);
-    canvas_draw_str(canvas, 3, 9, funnyText[funnyTextIndex]);
     canvas_set_font(canvas, FontSecondary);
-    snprintf(strButthurt, 16, "Butthurt: %lu", stateLocal->data.butthurt);
+    canvas_draw_str(canvas, 3, 9, funnyText[funnyTextIndex]);
+    snprintf(strButthurt, 16, "Set anger @ %lu", stateLocal->data.butthurt);
     snprintf(strXp, 16, "XP: %lu", stateLocal->data.icounter);
     canvas_draw_str(canvas, 51, 21, strButthurt);
     canvas_draw_str(canvas, 51, 31, strXp);
@@ -69,7 +68,7 @@ static void input_callback(InputEvent* input_event, void* ctx) {
     furi_message_queue_put(event_queue, input_event, FuriWaitForever);
 }
 
-int32_t bigsad_app(void* p) { 
+int32_t bigsad_app(void* p) {
     UNUSED(p);
 
     InputEvent event;
@@ -126,7 +125,7 @@ int32_t bigsad_app(void* p) {
             if(event.key == InputKeyBack) {
                 running = false;
             }
-        } 
+        }
     }
 
     furi_message_queue_free(event_queue);
