@@ -4,7 +4,7 @@
 #include <input/input.h>
 #include <stdlib.h>
 #include "antis_icons.h"
-#include "dolphin/helpers/dolphin_state.h"
+#include "dolphin_state.h"
 #include "saved_struct.h"
 #include <power/power_service/power.h>
 
