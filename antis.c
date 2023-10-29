@@ -9,12 +9,9 @@
 #include <power/power_service/power.h>
 
 const char* funnyText[] =
-{"Stop poking my brain",
- "You're a terrible owner",
- "I'll remember this!",
- "This really isnt ok",
- "Just feed me RFID cards!",
- "Forget to charge me too?"};
+{"Prozac, yum!",
+ "I'm not depressed - its ADHD",
+ "uWu"};
 
 int funnyTextIndex = 0;
 
