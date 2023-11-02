@@ -16,7 +16,7 @@ nymada wrote the original application, but I wanted to change a few things:
 1. Added dolphin_deed & dolphin_state so it would compile with ufbt.
 1. Recently updated the application id to conform to new requirements with ufbt/flipc
 
-![Screenshot-20230306-115930](https://user-images.githubusercontent.com/16545187/223104547-1beb448f-3673-47b4-a2cb-5f6ecc1371c6.png)
+![Screenshot-20230306-115930](.flipcorg/gallery/223104547-1beb448f-3673-47b4-a2cb-5f6ecc1371c6.png)
 
 ## Misc
 Ported from https://github.com/nymda/FlipperAntidepressants
