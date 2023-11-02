@@ -1,4 +1,4 @@
-Directory for a banner .... nothing more
+Directory for a banner .... nothing more, stolen from britannica
 
 
 
