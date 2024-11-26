@@ -73,12 +73,6 @@ bool dolphin_state_load(DolphinState* dolphin_state) {
     return success;
 }
 
-uint64_t dolphin_state_timestamp() {
-    FuriHalRtcDateTime datetime;
-    furi_hal_rtc_get_datetime(&datetime);
-    return furi_hal_rtc_datetime_to_timestamp(&datetime);
-}
-
 bool dolphin_state_is_levelup(uint32_t icounter) {
     return (icounter == LEVEL2_THRESHOLD) || (icounter == LEVEL3_THRESHOLD);
 }
@@ -124,12 +118,12 @@ void dolphin_state_on_deed(DolphinState* dolphin_state, DolphinDeed deed) {
             dolphin_state->data.butthurt =
                 CLAMP(dolphin_state->data.butthurt + 1, BUTTHURT_MAX, BUTTHURT_MIN);
             if(dolphin_state->data.icounter > 0) dolphin_state->data.icounter--;
-            dolphin_state->data.timestamp = dolphin_state_timestamp();
+            dolphin_state->data.timestamp = furi_hal_rtc_get_timestamp();
             dolphin_state->dirty = true;
         } else if(deed == DolphinDeedTestRight) {
             dolphin_state->data.butthurt = BUTTHURT_MIN;
             if(dolphin_state->data.icounter < UINT32_MAX) dolphin_state->data.icounter++;
-            dolphin_state->data.timestamp = dolphin_state_timestamp();
+            dolphin_state->data.timestamp = furi_hal_rtc_get_timestamp();
             dolphin_state->dirty = true;
         }
         return;
@@ -166,7 +160,7 @@ void dolphin_state_on_deed(DolphinState* dolphin_state, DolphinDeed deed) {
     new_butthurt = CLAMP(new_butthurt, BUTTHURT_MAX, BUTTHURT_MIN);
 
     dolphin_state->data.butthurt = new_butthurt;
-    dolphin_state->data.timestamp = dolphin_state_timestamp();
+    dolphin_state->data.timestamp = furi_hal_rtc_get_timestamp();
     dolphin_state->dirty = true;
 
     FURI_LOG_D(
@@ -179,7 +173,7 @@ void dolphin_state_on_deed(DolphinState* dolphin_state, DolphinDeed deed) {
 void dolphin_state_butthurted(DolphinState* dolphin_state) {
     if(dolphin_state->data.butthurt < BUTTHURT_MAX) {
         dolphin_state->data.butthurt++;
-        dolphin_state->data.timestamp = dolphin_state_timestamp();
+        dolphin_state->data.timestamp = furi_hal_rtc_get_timestamp();
         dolphin_state->dirty = true;
     }
 }
