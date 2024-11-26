@@ -78,7 +78,7 @@ int32_t bigsad_app(void* p) {
     Gui* gui = furi_record_open(RECORD_GUI);
     gui_add_view_port(gui, view_port, GuiLayerFullscreen);
 
-    funnyTextIndex = rand() % 5;
+    funnyTextIndex = rand() % 3;
 
     stateLocal = malloc(sizeof(DolphinState));
 
