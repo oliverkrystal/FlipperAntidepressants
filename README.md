@@ -1,8 +1,9 @@
-# FlipperAntidepressants  
+# FlipperAntidepressants
 ## What you Really Care about↓
-[View on FlipC.org](https://flipc.org/oliverkrystal/FlipperAntidepressants?branch=main)
+**FlipC.org seems to have died, so long and a thanks for all the fish**
 
-[Download Directly bypassing FlipC (sort of, it comes from FlipC)](https://flipc.org/api/v2/oliverkrystal/FlipperAntidepressants/elf?branch=main)
+ufbt Releases:
+* [1.1.2](dist/flipperantidepressant-1.1.2.fap)
 
 ## What it is
 Updated version of [nymda's](https://github.com/nymda/FlipperAntidepressants) Flipper Zero application that allows changing of the background XP and Butthurt values.  If you don't mess with your flipper he gets angry and acts like he's leaving (much like a 90's tamagotchi).  Its kind of frustrating and in my opinion pointless.
